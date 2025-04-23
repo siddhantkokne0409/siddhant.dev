@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div className="h-full">
     <section className="h-full flex justify-center items-center">
-      <div className="p-[15px] mx-auto h-full">
-        <div className="flex justify-around flex-col lg:flex-row items-center lg:pb-3">
+      <div className="p-[15px] mx-auto h-full ">
+        <div className="flex justify-around flex-col lg:flex-row items-center lg:pb-3 xl:h-[470px]">
           <div className="text-center lg:text-left order-2 lg:order-none">
             <span className="text-lg">Software Developer</span>
             <h1 className="h1 mb-6">
