@@ -242,16 +242,19 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="text-center xl:text-left flex flex-col gap-2">
+                <ul className="grid grid-cols-1 text-center xl:grid-cols-2 gap-y-4 gap-x-5 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
-                      <li
-                        key={index}
-                        className="flex items-center gap-2 text-sm font-semibold text-white/60"
-                      >
-                        <span className="text-accent">{item.fieldName}:</span>
-                        <span>{item.fieldValue}</span>
-                      </li>
+                      <div key={index}>
+                        <li className="flex items-center justify-center xl:justify-start gap-4 text-white/60">
+                          <span className="text-accent text-left">
+                            {item.fieldName}:
+                          </span>
+                          <span className="text-lg text-white">
+                            {item.fieldValue}
+                          </span>
+                        </li>
+                      </div>
                     );
                   })}
                 </ul>
