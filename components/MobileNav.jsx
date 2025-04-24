@@ -1,9 +1,15 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
+import { useState } from "react";
 
 const links = [
   {
@@ -30,14 +36,19 @@ const links = [
 
 const MobileNav = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   return (
-    <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger
+        onClick={() => setOpen(true)}
+        className="flex justify-center items-center"
+      >
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
+      <SheetTitle></SheetTitle>
       <SheetContent className={"flex flex-col"}>
         <div className="mt-32 mb-16 text-center text-2xl">
-          <Link href={"/"}>
+          <Link href={"/"} onClick={() => setOpen(false)}>
             <h1 className="text-4xl font-semibold">
               Siddhant<span className="text-accent">.</span>
             </h1>
@@ -49,6 +60,7 @@ const MobileNav = () => {
             return (
               <Link
                 href={link.path}
+                onClick={() => setOpen(false)}
                 key={index}
                 className={`${
                   link.path === pathname &&
