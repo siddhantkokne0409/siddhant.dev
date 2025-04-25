@@ -35,7 +35,7 @@ const Contact = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { dealy: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex flex-col justify-center px-4 py-12 xl:px-48 xl:py-6"
     >
@@ -50,8 +50,8 @@ const Contact = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
+                <Input type="text" placeholder="Firstname" />
+                <Input type="text" placeholder="Lastname" />
                 <Input type="email" placeholder="Email" />
                 <Input type="phone" placeholder="Phone Number" />
               </div>
