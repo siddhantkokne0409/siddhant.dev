@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${jetBrainsMono.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${jetBrainsMono.variable} ${jetBrainsMono.variable} antialiased select-none`}
       >
         <Header />
         <StairTransition />
