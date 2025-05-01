@@ -132,27 +132,6 @@ const skills = {
 };
 
 const Resume = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check for mobile screen width
-    const checkIfMobile = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
-    // Set initial screen size state
-    checkIfMobile();
-
-    // Recheck on window resize
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -253,7 +232,7 @@ const Resume = () => {
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4 pr-4">
                   {skills.skillList.map((skill, index) => (
                     <li key={index}>
-                      <TooltipProvider delayDuration={isMobile ? 3000 : 100}>
+                      <TooltipProvider delayDuration={100}>
                         <Tooltip>
                           <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                             <div className="text-4xl group-hover:text-accent transition-all duration-300">
