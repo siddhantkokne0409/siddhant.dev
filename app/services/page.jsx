@@ -8,26 +8,29 @@ const services = [
   {
     num: "01",
     title: "Web Development",
-    description: "We build fast, secure, and scalable web applications.",
+    description:
+      "We create responsive, user-friendly websites — from sleek landing pages to dynamic web apps — using robust frontend and backend technologies.",
     href: "",
   },
   {
     num: "02",
     title: "Software Development",
-    description: "We build fast, secure, and scalable software applications.",
+    description:
+      "We develop custom software solutions that streamline workflows, enhance efficiency, and solve real-world business challenges.",
     href: "",
   },
   {
     num: "03",
-    title: "AI Projects Development",
-    description: "We build fast, secure, and scalable AI applications.",
+    title: "AI Development",
+    description:
+      "We build AI-powered solutions that automate tasks, extract insights from data, and enable intelligent decision-making.",
     href: "",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 px-12 xl:px-48 xl:py-16">
+    <section className="min-h-[80vh] flex flex-col justify-center py-12 px-12 xl:px-52 xl:py-10">
       <div className="mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -52,7 +55,9 @@ const Services = () => {
                     <BsArrowDownRight className="text-primary text-xl" />
                   </Link>
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                  {service.title}
+                </h2>
                 <p className="text-white/60">{service.description}</p>
 
                 <div className="border-b border-white/20 w-full"></div>

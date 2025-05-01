@@ -9,6 +9,7 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
+import { Button } from "./ui/button";
 import { useState } from "react";
 
 const links = [
@@ -28,10 +29,10 @@ const links = [
     name: "Work",
     path: "/work",
   },
-  {
-    name: "Contact",
-    path: "/contact",
-  },
+  // {
+  //   name: "Contact",
+  //   path: "/contact",
+  // },
 ];
 
 const MobileNav = () => {
@@ -71,6 +72,9 @@ const MobileNav = () => {
               </Link>
             );
           })}
+          <Button onClick={() => setOpen(false)} className="cursor-pointer">
+            <Link href={"/contact"}>Hire me</Link>
+          </Button>
         </nav>
       </SheetContent>
     </Sheet>

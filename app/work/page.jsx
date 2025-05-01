@@ -18,31 +18,41 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Web Development",
+    category: "Kapil Engineering",
     title: "Project One",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    stack: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
-    image: "/assests/work/one.png",
+    stack: [{ name: "React" }, { name: "Node.js" }, { name: "Tailwind CSS" }],
+    image: "/Kapil.png",
     live: "",
     github: "https://github.com",
   },
   {
     num: "02",
-    category: "Web Development",
-    title: "Project One",
+    category: "SK EState",
+    title: "Project Two",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     stack: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
-    image: "/assests/work/one.png",
+    image: "/skestate.png",
     live: "",
     github: "https://github.com",
   },
   {
     num: "03",
-    category: "Web Development",
-    title: "Project One",
+    category: "PrepMate",
+    title: "Project Three",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     stack: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
-    image: "/assests/work/one.png",
+    image: "/prepmate.png",
+    live: "",
+    github: "https://github.com",
+  },
+  {
+    num: "04",
+    category: "WorkWise",
+    title: "Project Three",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    stack: [{ name: "Python" }, { name: "Tkinter" }, { name: "MediaPipe" }],
+    image: "/workwise.png",
     live: "",
     github: "https://github.com",
   },
@@ -128,21 +138,34 @@ const Work = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className="relative group h-[460px] group flex justify-center items-center bg-pink-50/20">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div>
+                    <div className="relative group h-[460px] group flex justify-center items-center bg-pink-50/20 rounded-2xl">
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-2xl"></div>
+                      {/* <div>
                         <Image
                           src={project.image}
                           alt=""
                           fill
                           className="object-cover"
                         />
+                      </div> */}
+                      <div className="relative w-full h-full rounded-2xl">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-fit rounded-2xl" // Optional: round corners
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority // optional for faster load
+                        />
                       </div>
                     </div>
                   </SwiperSlide>
                 );
               })}
-              <WorkSliderBtns containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all cursor-pointer" />
+              <WorkSliderBtns
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all cursor-pointer"
+              />
             </Swiper>
           </div>
         </div>

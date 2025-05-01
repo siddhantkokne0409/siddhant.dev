@@ -2,7 +2,12 @@
 
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs, SiLangchain } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiLangchain,
+  SiPython,
+} from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
@@ -14,11 +19,12 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aliquam architecto, perspiciatis magni eius vitae explicabo necessitatibus blanditiis illo.",
+    "A problem-solver at heart, I enjoy turning ideas into reality through clean code and creative thinking. Driven by curiosity, I strive to keep learning and building solutions that make a real impact.",
   info: [
     {
       fieldName: "Name",
@@ -47,7 +53,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit nostrum, debitis veniam ipsam dicta ullam",
+    "Hands-on experience in full-stack development, working on real-world projects, building scalable applications, and improving user experiences.",
   items: [
     {
       company: "Kapil Engineering",
@@ -61,7 +67,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit nostrum, debitis veniam ipsam dicta ullam reiciendis odio excepturi modi quaerat  dolorum architecto consectetur.",
+    "Graduated with a B.Tech degree in Artificial Intelligence and Data Science from Vishwakarma Institute of Technology, Pune, where I developed technical expertise and a passion for innovation.",
   items: [
     {
       institution: "Vishwakarma Institute of Technology",
@@ -73,13 +79,18 @@ const education = {
       stream: "Front End Development",
       duration: "2024",
     },
+    {
+      institution: "Online Course",
+      stream: "Generative AI Course With LangChain and HuggingFace",
+      duration: "2025",
+    },
   ],
 };
 
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aliquam architecto, perspiciatis magni eius vitae explicabo necessitatibus blanditiis illo.",
+    "Passionate about crafting seamless digital experiences with HTML, CSS, JavaScript, React, Next.js, and Node.js, while exploring the capabilities of Large Language Models (LLMs).",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -113,10 +124,35 @@ const skills = {
       icon: <SiLangchain />,
       name: "LangChain",
     },
+    {
+      icon: <SiPython />,
+      name: "Python",
+    },
   ],
 };
 
 const Resume = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check for mobile screen width
+    const checkIfMobile = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    // Set initial screen size state
+    checkIfMobile();
+
+    // Recheck on window resize
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -204,6 +240,7 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left mb-7">
                 <h3 className="text-3xl font-bold ">{skills.title}</h3>
@@ -211,11 +248,12 @@ const Resume = () => {
                   {skills.description}
                 </p>
               </div>
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4">
-                {skills.skillList.map((skill, index) => {
-                  return (
+
+              <ScrollArea className="xl:h-[300px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4 pr-4">
+                  {skills.skillList.map((skill, index) => (
                     <li key={index}>
-                      <TooltipProvider delayDuration={100}>
+                      <TooltipProvider delayDuration={isMobile ? 500 : 100}>
                         <Tooltip>
                           <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                             <div className="text-4xl group-hover:text-accent transition-all duration-300">
@@ -228,9 +266,9 @@ const Resume = () => {
                         </Tooltip>
                       </TooltipProvider>
                     </li>
-                  );
-                })}
-              </ul>
+                  ))}
+                </ul>
+              </ScrollArea>
             </TabsContent>
             <TabsContent
               value="about"
