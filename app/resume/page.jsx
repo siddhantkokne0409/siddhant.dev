@@ -253,7 +253,7 @@ const Resume = () => {
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4 pr-4">
                   {skills.skillList.map((skill, index) => (
                     <li key={index}>
-                      <TooltipProvider delayDuration={isMobile ? 500 : 100}>
+                      <TooltipProvider delayDuration={isMobile ? 3000 : 100}>
                         <Tooltip>
                           <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                             <div className="text-4xl group-hover:text-accent transition-all duration-300">
