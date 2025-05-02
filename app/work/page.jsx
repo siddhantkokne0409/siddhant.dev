@@ -20,8 +20,8 @@ const projects = [
     num: "01",
     category: "Kapil Engineering",
     title: "Project One",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    stack: [{ name: "React" }, { name: "Node.js" }, { name: "Tailwind CSS" }],
+    description: "This is a full-stack web application designed to streamline business operations, focusing on customer billing, payment tracking, and owner-side purchase management.",
+    stack: [{ name: "React.js" }, { name: "Node.js" }, { name: "Tailwind CSS" }],
     image: "/Kapil.png",
     live: "",
     github: "https://github.com",
@@ -30,8 +30,8 @@ const projects = [
     num: "02",
     category: "SK EState",
     title: "Project Two",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    stack: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
+    description: "This is a dynamic full-stack real estate web platform that allows users to rent, sell, or browse properties with ease. ",
+    stack: [{ name: "React.js" }, { name: "Node.js" }, { name: "FireBase" }],
     image: "/skestate.png",
     live: "",
     github: "https://github.com",
@@ -40,8 +40,8 @@ const projects = [
     num: "03",
     category: "PrepMate",
     title: "Project Three",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    stack: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
+    description: "PrepMate is an interactive AI-based web platform that helps users practice mock interviews in a realistic and adaptive environment. ",
+    stack: [{ name: "Next.js" }, { name: "Vapi AI" }, { name: "Google Gemini" }],
     image: "/prepmate.png",
     live: "",
     github: "https://github.com",
@@ -50,7 +50,7 @@ const projects = [
     num: "04",
     category: "WorkWise",
     title: "Project Three",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Workwise is an application which promotes healthier work habits and prevents burnout, the platform allows users to plan, track, and get reminded about breaks throughout their day.",
     stack: [{ name: "Python" }, { name: "Tkinter" }, { name: "MediaPipe" }],
     image: "/workwise.png",
     live: "",
@@ -83,7 +83,7 @@ const Work = () => {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} Project
+                {project.category}
               </h2>
 
               <p className="text-white/60">{project.description}</p>
