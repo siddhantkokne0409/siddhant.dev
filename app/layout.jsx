@@ -15,7 +15,7 @@ export const metadata = {
   title: "Siddhant Kokane",
   description: "Siddhant Kokane's Portfolio",
   icons: {
-    icon: "/faviconf.ico", // Path inside /public
+    icon: "/skfavicon.ico", // Path inside /public
   },
 };
 
